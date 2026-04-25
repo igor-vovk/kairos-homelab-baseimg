@@ -1,6 +1,6 @@
 # kairos-homelab-baseimg
 
-A base Docker image for [Kairos](https://kairos.io/) built on Ubuntu 24.04, published to the GitHub Container Registry via GitHub Actions.
+A base Docker image for [Kairos](https://kairos.io/) built on Debian Bookworm, published to the GitHub Container Registry via GitHub Actions.
 
 ## Image
 
@@ -21,8 +21,10 @@ FROM ghcr.io/igor-vovk/kairos-homelab-baseimg:latest
 ## Building locally
 
 ```bash
-docker build -t kairos-homelab-baseimg .
+docker build -t kairos-homelab-baseimg --build-arg VERSION=v0.1.0 .
 ```
+
+`VERSION` is passed to `kairos-init` and must be a valid version string such as `v0.1.0`, not `latest`.
 
 ## Publishing
 
